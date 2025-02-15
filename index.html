@@ -6,208 +6,285 @@
     <title>Choose Your Package</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-            width: 90%;
-            max-width: 900px;
-            text-align: center;
-            margin: 10px;
-        }
-        h2 {
-            color: #ff6600;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        .domain-search {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-        .domain-search input {
-            width: 70%;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 5px 0 0 5px;
-            font-size: 14px;
-        }
-        .domain-search button {
-            background: #ff6600;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 14px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-        .package-options {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .package {
-            background: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 45%;
-            text-align: left;
-            margin: 10px;
-        }
-        .package button {
-            background: #ff6600;
-            color: #fff;
-            border: none;
-            padding: 8px;
-            width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        .basket {
-            margin-top: 15px;
-            padding: 15px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 900px;
-            text-align: left;
-        }
-        .total {
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-        .btn-checkout {
-            background: #ff6600;
-            color: #fff;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .remove-btn {
-            background: red;
-            color: white;
-            border: none;
-            padding: 4px 8px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        .loading-spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border-left-color: #ff6600;
-            animation: spin 1s linear infinite;
-            margin: 15px auto;
-            display: none;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-            z-index: 1000;
-        }
-        .popup button {
-            background: #ff6600;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px;
-        }
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-        .customer-form {
-            margin-top: 15px;
-            padding: 15px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 900px;
-            text-align: left;
-        }
-        .customer-form input {
-            width: 100%;
-            padding: 8px;
-            margin: 8px 0;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        <style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 900px;
+        text-align: center;
+        margin: 20px;
+    }
+    h2 {
+        color: #ff6600;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .domain-search {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .domain-search input {
+        width: 70%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 8px 0 0 8px;
+        font-size: 16px;
+        outline: none;
+    }
+    .domain-search button {
+        background: #ff6600;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .domain-search button:hover {
+        background: #e65c00;
+    }
+    .package-options {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .package {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 45%;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .package:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .package label {
+        font-size: 16px;
+        color: #333;
+    }
+    .package button {
+        background: #ff6600;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 15px;
+        transition: background 0.3s ease;
+    }
+    .package button:hover {
+        background: #e65c00;
+    }
+    .basket {
+        margin-top: 20px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 900px;
+        text-align: left;
+    }
+    .basket h2 {
+        color: #ff6600;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    .basket ul {
+        list-style: none;
+        padding: 0;
+    }
+    .basket li {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .remove-btn {
+        background: #ff4d4d;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .remove-btn:hover {
+        background: #e60000;
+    }
+    .total {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 20px;
+    }
+    .btn-checkout {
+        background: #ff6600;
+        color: #fff;
+        border: none;
+        padding: 14px;
+        width: 100%;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background 0.3s ease;
+    }
+    .btn-checkout:hover {
+        background: #e65c00;
+    }
+    .customer-form {
+        margin-top: 20px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 900px;
+        text-align: left;
+    }
+    .customer-form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+    }
+    .customer-form input:focus {
+        border-color: #ff6600;
+    }
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-align: center;
+    }
+    .popup button {
+        background: #ff6600;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 5px;
+        transition: background 0.3s ease;
+    }
+    .popup button:hover {
+        background: #e65c00;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    .admin-panel {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        width: 90%;
+        max-width: 900px;
+        text-align: left;
+    }
+    .admin-panel h2 {
+        color: #ff6600;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .admin-panel textarea {
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        outline: none;
+    }
+    .admin-panel textarea:focus {
+        border-color: #ff6600;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
     </style>
 </head>
 <body>
+    <button class="admin-btn" onclick="showAdminPanel()">Admin</button>
+
     <div class="container">
         <h2>Find Your Perfect Domain</h2>
         <div class="domain-search">
             <input type="text" id="domainInput" placeholder="Enter your domain name...">
-            <button onclick="alert('Domain search is not functional in this demo.');">Add to Cart</button>
+            <button onclick="addDomainToCart()">Add to Cart</button>
         </div>
         <h2>Choose Your Package</h2>
         <div class="package-options">
             <div class="package">
                 <label><strong>VPS Standard</strong><br>8 GB RAM - 2 V-cores - 120GB SSD<br>Price: 39 SEK / Month</label>
-                <button onclick="alert('VPS Standard added to cart.');">Add to Cart</button>
+                <button onclick="addToCart('VPS Standard (8GB RAM, 2 V-cores, 120GB SSD)', 39)">Add to Cart</button>
             </div>
             <div class="package">
                 <label><strong>VPS Large</strong><br>16 GB RAM - 4 V-cores - 240GB SSD<br>Price: 79 SEK / Month</label>
-                <button onclick="alert('VPS Large added to cart.');">Add to Cart</button>
+                <button onclick="addToCart('VPS Large (16GB RAM, 4 V-cores, 240GB SSD)', 79)">Add to Cart</button>
             </div>
             <div class="package">
                 <label><strong>Shared Hosting</strong><br>Unlimited Websites - 100GB Storage<br>Price: 29 SEK / Month</label>
-                <button onclick="alert('Shared Hosting added to cart.');">Add to Cart</button>
+                <button onclick="addToCart('Shared Hosting (Unlimited Websites, 100GB Storage)', 29)">Add to Cart</button>
             </div>
         </div>
     </div>
 
     <div class="basket" id="basket">
         <h2>Shopping Cart</h2>
-        <ul id="cartItems">
-            <li>VPS Standard - 39 Kr <button class="remove-btn" onclick="alert('Item removed.');">Remove</button></li>
-        </ul>
-        <div class="total">Total: <span id="total">39</span> Kr</div>
-        <button class="btn-checkout" onclick="alert('Proceed to checkout.');">Proceed to Checkout</button>
+        <ul id="cartItems"></ul>
+        <div class="total">Total: <span id="total">0</span> Kr</div>
+        <button class="btn-checkout" onclick="showCustomerForm()">Proceed to Checkout</button>
     </div>
 
     <div class="customer-form" id="customerForm">
@@ -215,7 +292,209 @@
         <input type="text" id="name" placeholder="Full Name">
         <input type="email" id="email" placeholder="Email Address">
         <input type="tel" id="phone" placeholder="Phone Number">
-        <button class="btn-checkout" onclick="alert('Order submitted!');">Submit Order</button>
+        <button class="btn-checkout" onclick="submitForm()">Submit Order</button>
     </div>
+
+    <div class="popup" id="sslPopup">
+        <p>You want to continue without an SSL certificate?</p>
+        <button onclick="addSSLCertificate()">Add SSL Certificate (79 Kr/month)</button>
+        <button onclick="closePopup()">Continue Without SSL</button>
+    </div>
+
+    <div class="payment-popup" id="paymentPopup">
+        <h2>Complete Your Payment</h2>
+        <p>Send <strong><span id="paymentAmount">0</span> Kr</strong> to:</p>
+        <p><strong>Mobile:</strong> 0704679809</p>
+        <p><strong>PayPal:</strong> paypal@mail.com</p>
+        <button onclick="closePaymentPopup()">Close</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="loading-spinner" id="loadingSpinner"></div>
+
+    <div class="admin-panel" id="adminPanel">
+        <h2>Admin Panel - All Orders</h2>
+        <textarea id="ordersText" placeholder="Orders will appear here..."></textarea>
+        <button class="btn-checkout" onclick="closeAdminPanel()">Close</button>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js"></script>
+
+    <!-- Your JavaScript Code -->
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBl8KcXR15gR7G5ttt3PWkpQl4w7zZMemo",
+            authDomain: "payment-form-1d04f.firebaseapp.com",
+            projectId: "payment-form-1d04f",
+            storageBucket: "payment-form-1d04f.appspot.com",
+            messagingSenderId: "681405077417",
+            appId: "1:681405077417:web:3d0a80c3b7a8080f8fd6b8",
+            measurementId: "G-9F0K539EWF"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        let cart = [];
+
+        // Domain prices
+        const domainPrices = {
+            '.com': 99,
+            '.se': 79,
+            '.net': 89,
+            // Add more extensions as needed
+        };
+
+        // Add domain to cart
+        function addDomainToCart() {
+            const domain = document.getElementById('domainInput').value.trim();
+            if (!domain) {
+                alert('Please enter a domain name.');
+                return;
+            }
+
+            // Check if a VPS or Shared Hosting package is in the cart
+            const hasPackage = cart.some(item => item.item.includes('VPS') || item.item.includes('Shared Hosting'));
+            if (!hasPackage) {
+                alert('You must select a VPS or Shared Hosting package to add a domain.');
+                return;
+            }
+
+            // Extract domain extension
+            const domainExt = domain.substring(domain.lastIndexOf('.'));
+            const price = domainPrices[domainExt] || 17; // Default price for unknown extensions
+
+            // Add domain to cart
+            addToCart(`Domain: ${domain}`, price);
+        }
+
+        // Add item to cart
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            updateCart();
+        }
+
+        // Remove item from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Update cart UI
+        function updateCart() {
+            const cartList = document.getElementById('cartItems');
+            cartList.innerHTML = '';
+            let total = 0;
+            cart.forEach((product, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `${product.item} - ${product.price} Kr <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>`;
+                cartList.appendChild(li);
+                total += product.price;
+            });
+            document.getElementById('total').textContent = total;
+        }
+
+        // Show customer form
+        function showCustomerForm() {
+            // Check if a VPS or Shared Hosting package is in the cart
+            const hasPackage = cart.some(item => item.item.includes('VPS') || item.item.includes('Shared Hosting'));
+            if (!hasPackage) {
+                alert('You must select a VPS or Shared Hosting package to proceed.');
+                return;
+            }
+            document.getElementById('customerForm').style.display = 'block';
+        }
+
+        // Submit form and save order to Firestore
+        async function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            if (!name || !email || !phone) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            const orderData = {
+                name,
+                email,
+                phone,
+                items: cart,
+                total: parseInt(document.getElementById('total').textContent),
+                timestamp: new Date(),
+            };
+
+            try {
+                // Save order to Firestore
+                await db.collection('orders').add(orderData);
+                alert('Order submitted successfully!');
+
+                // Show payment popup
+                document.getElementById('paymentAmount').textContent = document.getElementById('total').textContent;
+                document.getElementById('paymentPopup').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+
+                // Clear cart and form
+                cart = [];
+                updateCart();
+                document.getElementById('customerForm').style.display = 'none';
+            } catch (error) {
+                console.error('Error saving order:', error);
+                alert('Failed to submit order.');
+            }
+        }
+
+        // Fetch orders in admin panel
+        async function showAdminPanel() {
+            const password = prompt('Enter admin password:');
+            if (password === 'password123') {
+                try {
+                    // Fetch orders from Firestore
+                    const ordersSnapshot = await db.collection('orders').get();
+                    const orders = ordersSnapshot.docs.map(doc => doc.data());
+
+                    // Display orders in the textarea
+                    const ordersTextarea = document.getElementById('ordersText');
+                    ordersTextarea.value = orders.map(order => `
+                        Order:
+                        - Name: ${order.name}
+                        - Email: ${order.email}
+                        - Phone: ${order.phone}
+                        - Items:
+                            ${order.items.map(item => `\n      ${item.item} - ${item.price} Kr`).join('')}
+                        - Total: ${order.total} Kr
+                        - Date: ${order.timestamp.toDate()}
+                        --------------------------
+                    `).join('\n');
+
+                    // Show admin panel
+                    document.getElementById('adminPanel').style.display = 'block';
+                    document.getElementById('overlay').style.display = 'block';
+                } catch (error) {
+                    console.error('Error fetching orders:', error);
+                    alert('Failed to fetch orders.');
+                }
+            } else {
+                alert('Incorrect password.');
+            }
+        }
+
+        // Close admin panel
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Close payment popup
+        function closePaymentPopup() {
+            document.getElementById('paymentPopup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
